@@ -1,0 +1,47 @@
+body{
+    /* background-color: gray; */
+    background-image: url(https://img.yugioh-card.com/eu/wp-content/uploads/2022/09/WCS-hero-banner.webp);
+}
+
+
+.yugiohDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: outset 3px black;
+    border-radius: 10px;
+    background-color: darkslategrey;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    padding: 10px;
+    gap: 2px;
+}
+
+
+.yugiohDiv .info {
+    /* .info è il contenitore delle informazioni testuali all'interno del contenitore yugiohDiv */
+    display: flex;
+    flex-direction: column;  /* testi uno sotto l'altro */
+    justify-content: flex-start;
+    text-align: center;        /* allinea il testo */
+    gap: 5px; 
+}
+
+.yugiohDiv img {
+    /* img è l'elemento immagine all'interno del contenitore yugiohDiv */
+    width: 300px;
+    height: auto;
+    border-radius: 10px;        /* angoli arrotondati */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* ombra elegante */
+    margin: 10px auto;          /* centra l’immagine */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* animazione */
+}
+
+.yugiohDiv img:hover {
+    /* effetto al passaggio del mouse */ 
+    /* hover è uno pseudo-classe CSS che si attiva quando il cursore del mouse passa sopra l'elemento */
+    transform: scale(1.05); /* effetto zoom */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
