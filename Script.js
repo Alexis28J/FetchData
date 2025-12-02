@@ -108,9 +108,13 @@ fetch('./Assets/Data.json').then(manageResponse).then(manageResult);
 ////////////////////////////////////////////
 
 fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=100&offset=0')
-    .then(resp => resp.json())
-    .then(yugiohCallback)
-    .catch(err => console.error(err));
+.then(resp => resp.json())
+.then(yugiohCallback)
+.catch(err => console.error(err));
+//offset - da vove inizia - in questo caso dalla prima pagina (0)
+//num - quantità di dati che può mostrare per pagina
+//I "meta" ci permettono di fare le cosiddette paginate
+
 
 
 
@@ -131,7 +135,7 @@ function yugiohCallback(result) {
         yugiohImg.src = cards.card_images[0].image_url;
         //la proprietà "card_images" è un array di immagini, prendo la prima immagine e il suo URL
         //.src per impostare la sorgente dell'immagine
-        yugiohImg.classList.add('yugiohImg')
+        yugiohImg.classList.add('yugiohImg');
         yugiohDiv.appendChild(yugiohImg);
 
         const yugiohName = document.createElement('p');
@@ -150,11 +154,7 @@ function yugiohCallback(result) {
         yugiohPrice.appendChild(document.createTextNode('Card Price: ' + cards.card_prices[0].cardmarket_price));
         //[0] perché "card_prices" è un array di prezzi da diversi mercati, prendo il primo prezzo (cardmarket_price)
         yugiohDiv.appendChild(yugiohPrice);
-
-
-
-
     }
 
-
 }
+
